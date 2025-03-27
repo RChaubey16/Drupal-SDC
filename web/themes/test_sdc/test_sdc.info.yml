@@ -1,0 +1,6 @@
+name: Test SDC Theme
+type: theme
+base theme: olivero
+description: 'A custom theme demonstrating Single Directory Components (SDC)'
+package: Custom
+core_version_requirement: ^10 || ^11

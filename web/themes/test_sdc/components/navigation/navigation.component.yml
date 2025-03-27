@@ -1,0 +1,16 @@
+name: Main Navigation
+description: 'Primary site navigation menu'
+props:
+  menu_items:
+    type: array
+    label: 'Navigation Menu Items'
+    required: true
+    schema:
+      type: object
+      properties:
+        title:
+          type: string
+        url:
+          type: string
+        active:
+          type: boolean

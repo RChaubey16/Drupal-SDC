@@ -1,0 +1,68 @@
+name: Modern Header
+description: 'A responsive and interactive header component'
+props:
+  site_name:
+    type: string
+    label: 'Site Name'
+    required: true
+  
+  logo:
+    type: object
+    label: 'Site Logo'
+    schema:
+      type: object
+      properties:
+        src:
+          type: string
+          label: 'Logo Image Source'
+        alt:
+          type: string
+          label: 'Logo Alt Text'
+  
+  primary_menu:
+    type: array
+    label: 'Primary Navigation Menu'
+    schema:
+      type: object
+      properties:
+        title:
+          type: string
+        url:
+          type: string
+        children:
+          type: array
+  
+  cta_button:
+    type: object
+    label: 'Call to Action Button'
+    schema:
+      type: object
+      properties:
+        text:
+          type: string
+        url:
+          type: string
+        style:
+          type: string
+          enum: ['primary', 'secondary', 'outline']
+  
+  user_actions:
+    type: object
+    label: 'User Action Links'
+    schema:
+      type: object
+      properties:
+        login:
+          type: object
+          properties:
+            text:
+              type: string
+            url:
+              type: string
+        register:
+          type: object
+          properties:
+            text:
+              type: string
+            url:
+              type: string

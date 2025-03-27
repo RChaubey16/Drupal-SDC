@@ -1,0 +1,3 @@
+twig:
+  sdc_custom_page:
+    template: 'sdc-custom-page'

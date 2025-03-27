@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card__image-container">
+    <img 
+      src="{{ image.src }}" 
+      alt="{{ image.alt }}" 
+      class="card__image"
+      loading="lazy"
+    >
+    {% if link %}
+      <a href="{{ link }}" class="card__overlay-link"></a>
+    {% endif %}
+  </div>
+  
+  <div class="card__content">
+    <h3 class="card__title">
+      {% if link %}
+        <a href="{{ link }}">{{ title }}</a>
+      {% else %}
+        {{ title }}
+      {% endif %}
+    </h3>
+    
+    {% if description %}
+      <p class="card__description">{{ description }}</p>
+    {% endif %}
+  </div>
+</div>

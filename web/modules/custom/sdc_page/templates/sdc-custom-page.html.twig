@@ -1,0 +1,128 @@
+{# Render the card component #}
+{{ attach_library('my_theme/card') }}
+
+{# HEADER #}
+{% include 'test_sdc:header' with {
+  site_name: 'My Awesome Site',
+  logo: {
+    src: '/path/to/logo.svg',
+    alt: 'Company Logo'
+  },
+  primary_menu: [
+    {
+      title: 'Home',
+      url: '/',
+    },
+    {
+      title: 'Services',
+      url: '/services',
+      children: [
+        { title: 'Web Design', url: '/services/web-design' },
+        { title: 'Hosting', url: '/services/hosting' }
+      ]
+    },
+    {
+      title: 'About',
+      url: '/about'
+    }
+  ],
+  cta_button: {
+    text: 'Get Started',
+    url: '/signup',
+    style: 'primary'
+  },
+  user_actions: {
+    login: {
+      text: 'Login',
+      url: '/login'
+    },
+    register: {
+      text: 'Sign Up',
+      url: '/register'
+    }
+  }
+} %}
+
+{# CHIP #}
+{% embed 'test_sdc:chip' with {
+    color: 'primary',
+    dismissable: true
+} %}
+
+	{% block chip_content %}
+		Type:
+		<span>{{ node.bundle() }}</span>
+	{% endblock %}
+
+{% endembed %}
+
+
+{# CARDS #}
+<div class="card__box">
+	{% include 'test_sdc:card' with {
+		image: {
+			src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtnvAOajH9gS4C30cRF7rD_voaTAKly2Ntaw&s',
+			alt: 'Beautiful Landscape'
+		},
+		title: 'Awesome Card Title',
+		link: '/some-link',
+		description: 'A brief description of the card content goes here.'
+	} %}
+	{% include 'test_sdc:card' with {
+		image: {
+			src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtnvAOajH9gS4C30cRF7rD_voaTAKly2Ntaw&s',
+			alt: 'Beautiful Landscape'
+		},
+		title: 'Awesome Card Title',
+		link: '/some-link',
+		description: 'A brief description of the card content goes here.'
+	} %}
+	{% include 'test_sdc:card' with {
+		image: {
+			src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtnvAOajH9gS4C30cRF7rD_voaTAKly2Ntaw&s',
+			alt: 'Beautiful Landscape'
+		},
+		title: 'Awesome Card Title',
+		link: '/some-link',
+		description: 'A brief description of the card content goes here.'
+	} %}
+</div>
+
+{# FOOTER #}
+{% include 'test_sdc:footer' with {
+  site_name: 'My Awesome Site',
+  social_links: [
+    {
+      platform: 'Facebook', 
+      url: 'https://facebook.com/mysite', 
+      icon: 'facebook'
+    },
+    {
+      platform: 'Twitter', 
+      url: 'https://twitter.com/mysite', 
+      icon: 'twitter'
+    }
+  ],
+  footer_links: [
+    {
+      title: 'Quick Links',
+      links: [
+        { text: 'Home', url: '/' },
+        { text: 'About', url: '/about' }
+      ]
+    },
+    {
+      title: 'Services',
+      links: [
+        { text: 'Web Design', url: '/services/web-design' },
+        { text: 'Hosting', url: '/services/hosting' }
+      ]
+    }
+  ],
+  contact_info: {
+    email: 'contact@mysite.com',
+    phone: '+1 (555) 123-4567',
+    address: '123 Web Street, Internet City'
+  },
+  copyright: '© {year} My Awesome Site. All Rights Reserved.'
+} %}

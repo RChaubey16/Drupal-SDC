@@ -1,0 +1,7 @@
+custom_page.content:
+  path: '/custom-page'
+  defaults:
+    _controller: 'Drupal\sdc_page\Controller\SdcCustomPageController::content'
+    _title: 'SDC Custom Page'
+  requirements:
+    _permission: 'access content'

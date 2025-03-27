@@ -1,0 +1,20 @@
+header:
+  css:
+    theme:
+      components/header/header.css: {}
+  js:
+    components/header/header.js: {}
+
+card:
+  css:
+    theme:
+      components/card/card.css: {}
+  js:
+    components/card/card.js: {}
+
+footer:
+  css:
+    theme:
+      components/footer/footer.css: {}
+  js:
+    components/footer/footer.js: {}

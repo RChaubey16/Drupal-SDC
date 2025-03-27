@@ -1,0 +1,26 @@
+name: Card
+description: 'A beautiful card component with image and title'
+props:
+  image:
+    type: object
+    label: 'Card Image'
+    required: true
+    schema:
+      type: object
+      properties:
+        src:
+          type: string
+          label: 'Image Source'
+        alt:
+          type: string
+          label: 'Image Alt Text'
+  title:
+    type: string
+    label: 'Card Title'
+    required: true
+  link:
+    type: string
+    label: 'Card Link URL'
+  description:
+    type: string
+    label: 'Card Description'

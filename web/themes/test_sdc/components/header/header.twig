@@ -1,0 +1,79 @@
+<header class="site-header">
+  <div class="header-container">
+    <div class="header-brand">
+      {% if logo.src %}
+        <a href="/" class="header-logo">
+          <img 
+            src="{{ logo.src }}" 
+            alt="{{ logo.alt|default(site_name ~ ' Logo') }}" 
+            class="logo-image"
+          >
+        </a>
+      {% endif %}
+      <a href="/" class="site-name">{{ site_name }}</a>
+    </div>
+
+    <nav class="main-navigation" aria-label="Main Navigation">
+      <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+        <span class="menu-icon">
+          <span class="menu-icon-bar"></span>
+          <span class="menu-icon-bar"></span>
+          <span class="menu-icon-bar"></span>
+        </span>
+      </button>
+
+      <ul id="main-menu" class="navigation-menu">
+        {% for item in primary_menu %}
+          <li class="menu-item {{ item.children ? 'has-dropdown' : '' }}">
+            <a href="{{ item.url }}" class="menu-link">
+              {{ item.title }}
+            </a>
+            
+            {% if item.children %}
+              <ul class="dropdown-menu">
+                {% for child in item.children %}
+                  <li class="dropdown-item">
+                    <a href="{{ child.url }}" class="dropdown-link">
+                      {{ child.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      {% if cta_button %}
+        <a 
+          href="{{ cta_button.url }}" 
+          class="cta-button cta-button--{{ cta_button.style|default('primary') }}"
+        >
+          {{ cta_button.text }}
+        </a>
+      {% endif %}
+
+      <div class="user-actions">
+        {% if user_actions.login %}
+          <a 
+            href="{{ user_actions.login.url }}" 
+            class="user-action login-action"
+          >
+            {{ user_actions.login.text|default('Login') }}
+          </a>
+        {% endif %}
+
+        {% if user_actions.register %}
+          <a 
+            href="{{ user_actions.register.url }}" 
+            class="user-action register-action"
+          >
+            {{ user_actions.register.text|default('Register') }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</header>

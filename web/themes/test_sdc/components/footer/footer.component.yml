@@ -1,0 +1,56 @@
+name: Modern Footer
+description: 'A comprehensive and responsive footer component'
+props:
+  site_name:
+    type: string
+    label: 'Site Name'
+    required: true
+  
+  social_links:
+    type: array
+    label: 'Social Media Links'
+    schema:
+      type: object
+      properties:
+        platform:
+          type: string
+        url:
+          type: string
+        icon:
+          type: string
+  
+  footer_links:
+    type: array
+    label: 'Footer Navigation Links'
+    schema:
+      type: object
+      properties:
+        title:
+          type: string
+        links:
+          type: array
+          items:
+            type: object
+            properties:
+              text:
+                type: string
+              url:
+                type: string
+  
+  contact_info:
+    type: object
+    label: 'Contact Information'
+    schema:
+      type: object
+      properties:
+        email:
+          type: string
+        phone:
+          type: string
+        address:
+          type: string
+  
+  copyright:
+    type: string
+    label: 'Copyright Text'
+    default: '© {year} All Rights Reserved'

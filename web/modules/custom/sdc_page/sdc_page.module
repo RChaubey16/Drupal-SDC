@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function sdc_page_theme($existing, $type, $theme, $path)
+{
+    return [
+        'sdc_custom_page' => [
+            'variables' => ['custom_variable' => NULL],
+        ],
+    ];
+}

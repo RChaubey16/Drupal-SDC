@@ -1,0 +1,7 @@
+name: 'SDC Page'
+type: module
+description: 'Provides a custom page using a controller and a Twig template.'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:system
