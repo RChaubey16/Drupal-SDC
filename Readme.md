@@ -57,3 +57,6 @@ component-name/
 ## License
 
 This project is licensed under the GNU General Public License v2.0 or later.
+
+
+https://tinyurl.com/2964c2s2
